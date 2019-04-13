@@ -59,3 +59,39 @@ nav ul a:hover {
 nav ul a.is-active {
   border: none;
 }
+
+section {
+  margin-top: 40px;
+}
+
+label {
+  display: block;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+input {
+  width: 70%;
+  height: 55px;
+  margin-top: 15px;
+  padding: 15px 20px;
+
+  color: #E9F5F2;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  background: #A0B8B2;
+
+  font-size: 18px;
+}
+
+input::placeholder {
+  color: #E9F5F2;
+
+  font-style: italic;
+}
+
+form label:not(:first-child) {
+  margin-top: 40px;
+}
