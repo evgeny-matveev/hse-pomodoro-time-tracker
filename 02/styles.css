@@ -1,2 +1,61 @@
 @import "reset.css";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&subset=cyrillic');
+
+* {
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  color: #293330;
+  background: #E9F5F2;
+
+  font-family: "Opens Sans", sans-serif;
+}
+
+nav,
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+nav {
+  display: flex;
+
+  padding-top: 14px;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+
+  font-size: 14px;
+  font-weight: bold;
+}
+
+nav ul li:not(:last-child) {
+  margin-right: 30px;
+}
+
+nav ul a {
+  padding-bottom: 3px;
+
+  transition: border 200ms ease;
+  text-decoration: none;
+
+  color: #293330;
+  border-bottom: 1px solid rgba(229, 100, 92, 0.5);
+}
+
+nav ul a:hover {
+  border-bottom: 1px solid rgba(229, 100, 92, 1);
+}
+
+nav ul a.is-active {
+  border: none;
+}
