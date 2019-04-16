@@ -46,15 +46,35 @@ statsLink.onclick = function () {
   statsLink.classList.toggle('is-active')
   timerLink.classList.toggle('is-active')
   footerImg.src = 'img/stats-section.svg'
+
+  const historySize = localStorage.length
+  if (historySize > 0) {
+    for (let i = 0; i < historySize; i++) {
+      const key = localStorage.key(i)
+      const taskName = localStorage.getItem(key)
+
+      const tr = document.createElement('tr')
+      const tdDate = document.createElement('td')
+      const tdTime = document.createElement('td')
+      const tdTask = document.createElement('td')
+      const tdRemove = document.createElement('td')
+
+      // const listItem = document.createElement('li')
+      // listItem.innerText = taskName
+      // tasks.appendChild(listItem)
+    }
+  }
 }
 
 form.onsubmit = function startTimer(e) {
   e.preventDefault()
 
   const input = e.target.querySelector('input[type=text]')
+  const key = Date.now()
+  localStorage.setItem(key, input.value)
 
   setTimeout(function () {
-    console.log(input.value)
+    input.value = ''
   }, taskTime)
 }
 
