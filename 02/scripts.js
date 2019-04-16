@@ -57,3 +57,7 @@ form.onsubmit = function startTimer(e) {
     console.log(input.value)
   }, taskTime)
 }
+
+if (window.location.hash === '#stats-section') {
+  statsLink.click()
+}
