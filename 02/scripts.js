@@ -6,7 +6,6 @@ const timerLink = document.querySelector('#timer-link')
 const statsLink = document.querySelector('#stats-link')
 const timerSection = document.querySelector('#timer-section')
 const statsSection = document.querySelector('#stats-section')
-const footerImg = document.querySelector('footer > img')
 
 switchTo25.onclick = function handleTimeSwitch() {
   switchTo25.classList.add('is-active')
@@ -21,23 +20,17 @@ switchTo5.onclick = function handleTimeSwitch() {
 }
 
 timerLink.onclick = function () {
-  if (timerLink.classList.contains('is-active')) {
-    return
-  }
   statsSection.style.display = 'none'
   timerSection.style.display = 'block'
-  timerLink.classList.toggle('is-active')
-  statsLink.classList.toggle('is-active')
+  timerLink.classList.add('is-active')
+  statsLink.classList.remove('is-active')
 }
 
 statsLink.onclick = function () {
-  if (statsLink.classList.contains('is-active')) {
-    return
-  }
   timerSection.style.display = 'none'
   statsSection.style.display = 'block'
-  statsLink.classList.toggle('is-active')
-  timerLink.classList.toggle('is-active')
+  statsLink.classList.add('is-active')
+  timerLink.classList.remove('is-active')
 
   const historySize = localStorage.length
   if (historySize > 0) {
