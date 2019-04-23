@@ -37,24 +37,28 @@ statsLink.onclick = function () {
   if (historySize > 0) {
     for (let i = 0; i < historySize; i++) {
       const key = localStorage.key(i)
-      const taskName = localStorage.getItem(key)
+
+      const task = JSON.parse(localStorage.getItem(key))
 
       const tr = document.createElement('tr')
-
-      const taskDate = new Date(+key).getDate()
-      const taskMonth = new Date(+key).getMonth()
-      const tdDate = document.createElement('td')
 
       // Как сделать из строки число:
       //   1. Number(key)
       //   2. parseInt(key)
       //   3. +key
 
+      const taskDate = new Date(+key).getDate()
+      const taskMonth = new Date(+key).getMonth()
+
+      const tdDate = document.createElement('td')
       tdDate.innerText = taskDate + '/' + taskMonth
 
       const tdTime = document.createElement('td')
+      tdTime.innerText = task.time
+
       const tdTask = document.createElement('td')
-      tdTask.innerText = taskName
+      tdTask.innerText = task.name
+
       const tdRemove = document.createElement('td')
       // [tdDate, tdTime, tdTask, tdRemove]
       //   .forEach(el => tr.appendChild(el))
@@ -62,6 +66,7 @@ statsLink.onclick = function () {
       tr.appendChild(tdTime)
       tr.appendChild(tdTask)
       tr.appendChild(tdRemove)
+
       const tbody = document.querySelector('tbody')
       tbody.appendChild(tr)
     }
@@ -72,6 +77,8 @@ form.onsubmit = function startTimer(e) {
   e.preventDefault()
 
   const input = e.target.querySelector('input[type=text]')
+  // Date.now() возвращает количество миллисекунд с 1970 года, читайте подробнее в http://learn.javascript.ru/datetime
+  // Мы используем количество времени для ключа, чтобы избежать проблемы двух одинаковых записей
   const key = Date.now()
   // Создаем объект с названием и временем задачи
   const task = {
