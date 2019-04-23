@@ -57,8 +57,12 @@ statsLink.onclick = function () {
       const tdDate = document.createElement('td')
       const tdTime = document.createElement('td')
       const tdTask = document.createElement('td')
+      tdTask.innerText = taskName
       const tdRemove = document.createElement('td')
-
+      tr.appendChild(tdDate)
+      tr.appendChild(tdTime)
+      tr.appendChild(tdTask)
+      tr.appendChild(tdRemove)
       // const listItem = document.createElement('li')
       // listItem.innerText = taskName
       // tasks.appendChild(listItem)
@@ -78,6 +82,10 @@ form.onsubmit = function startTimer(e) {
   }, taskTime)
 }
 
-if (window.location.hash === '#stats-section') {
+if (window.location.hash === '#timer-section') {
   statsLink.click()
+}
+
+if (window.location.hash === '#stats-section') {
+  timerLink.click()
 }
