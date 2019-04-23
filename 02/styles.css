@@ -62,7 +62,13 @@ nav ul a.is-active {
 }
 
 section {
+  display: none;
+
   margin-top: 40px;
+}
+
+#timer-section {
+  display: block;
 }
 
 .section-logo {

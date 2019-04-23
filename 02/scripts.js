@@ -94,9 +94,9 @@ form.onsubmit = function startTimer(e) {
 }
 
 if (window.location.hash === '#timer-section') {
-  statsLink.click()
+  timerLink.click()
 }
 
 if (window.location.hash === '#stats-section') {
-  timerLink.click()
+  statsLink.click()
 }
