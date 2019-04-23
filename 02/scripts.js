@@ -34,7 +34,6 @@ timerLink.onclick = function () {
   timerSection.style.display = 'block'
   timerLink.classList.toggle('is-active')
   statsLink.classList.toggle('is-active')
-  footerImg.src = 'img/timer-section.svg'
 }
 
 statsLink.onclick = function () {
@@ -45,7 +44,6 @@ statsLink.onclick = function () {
   statsSection.style.display = 'block'
   statsLink.classList.toggle('is-active')
   timerLink.classList.toggle('is-active')
-  footerImg.src = 'img/stats-section.svg'
 
   const historySize = localStorage.length
   if (historySize > 0) {
