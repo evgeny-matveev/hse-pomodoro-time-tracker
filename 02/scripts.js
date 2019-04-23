@@ -9,20 +9,14 @@ const statsSection = document.querySelector('#stats-section')
 const footerImg = document.querySelector('footer > img')
 
 switchTo25.onclick = function handleTimeSwitch() {
-  if (switchTo25.classList.contains('is-active')) {
-    return
-  }
-  switchTo25.classList.toggle('is-active')
-  switchTo5.classList.toggle('is-active')
+  switchTo25.classList.add('is-active')
+  switchTo5.classList.remove('is-active')
   taskTime = 5000
 }
 
 switchTo5.onclick = function handleTimeSwitch() {
-  if (switchTo5.classList.contains('is-active')) {
-    return
-  }
-  switchTo5.classList.toggle('is-active')
-  switchTo25.classList.toggle('is-active')
+  switchTo5.classList.add('is-active')
+  switchTo25.classList.remove('is-active')
   taskTime = 1000
 }
 
