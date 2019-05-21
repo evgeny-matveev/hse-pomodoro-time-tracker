@@ -1,0 +1,37 @@
+header {
+  display: flex;
+
+  width: 80vw;
+  margin: 0 auto;
+
+  justify-content: space-between;
+}
+
+.is-hidden {
+  display: none;
+}
+
+button {
+  width: 50px;
+
+  cursor: pointer;
+
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+button span {
+  display: block;
+
+  width: 40px;
+  height: 5px;
+  margin-bottom: 5px;
+
+  background-color: #ccc;
+}
+
+main {
+  width: 80vw;
+  margin: 0 auto;
+}
